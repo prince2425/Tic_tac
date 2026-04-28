@@ -23,10 +23,6 @@
 .square {
   width: 30vw;          /* responsive width */
   height: 30vh;         /* keep square shape */
-  max-width: 100px;      /* limit for large screens */
-  max-height: 100px;
-  min-width: 100px;      /* limit for small screens */
-  min-height: 100px;
 
   margin: 3px;
   font-size: 6vw;       /* responsive text */
@@ -69,19 +65,11 @@
 }
 
 /* 📱 Mobile tweak */
-/* @media (max-width: 480px) {
+@media (max-width: 480px) {
   .square {
-    width: 30vw;
-    height: 30vh;
+    width: 45vw;
+    height: 45vh;
     font-size: 8vw;
   }
-} */
+}
 
-/* 🖥️ Large screens */
-/* @media (min-width: 768px) {
-  .square {
-    width: 70px;
-    height: 70px;
-    font-size: 28px;
-  }
-} */
