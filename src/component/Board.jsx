@@ -70,8 +70,8 @@ const Board = () => {
   };
 
   return (
-    <>
-      <div className="board">
+    <div className="game-container">
+      <div className="board ">
         <div className="board-row">
           {renderSquare(0)}
           {renderSquare(1)}
@@ -96,7 +96,7 @@ const Board = () => {
       {winner && <div>{winner} is Winner of this Game.</div>}
 
       </div>
-    </>
+    </div>
   );
 };
 
