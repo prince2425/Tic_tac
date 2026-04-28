@@ -1,32 +1,36 @@
-
-
-
-.game-container{
+/* 🔥 Full screen center */
+.game-container {
+  min-height: 100dvh; /* best for mobile */
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;  /* vertical center */
+  align-items: center;      /* horizontal center */
+  gap: 20px;
 }
 
+/* Board layout */
 .board {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
 }
 
 .board-row {
   display: flex;
 }
 
-/* 🔥 Responsive square */
+/* 🔳 Square boxes (default) */
 .square {
-  width: 30vw;          /* responsive width */
-  height: 30vh;         /* keep square shape */
+  width: 22vw;
+  height: 22vw;
 
-  margin: 3px;
-  font-size: 6vw;       /* responsive text */
-  max-font-size: 32px;
+  max-width: 80px;
+  max-height: 80px;
+
+  min-width: 50px;
+  min-height: 50px;
+
+  margin: 4px;
+  font-size: 6vw;
 
   display: flex;
   align-items: center;
@@ -35,28 +39,17 @@
   background: #111;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
+
+  transition: 0.2s;
 }
 
-.game-container {
-  height: 100vh;              /* full screen height */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;    /* 🔥 vertical center */
-  align-items: center;        /* horizontal center */
-  gap: 20px;
+.square:hover {
+  background: #333;
 }
 
-.board {
-  display: flex;
-  flex-direction: column;
-}
-
-.board-row {
-  display: flex;
-}
-
+/* Controls */
 .controls {
   display: flex;
   flex-direction: column;
@@ -64,12 +57,11 @@
   gap: 10px;
 }
 
-/* 📱 Mobile tweak */
-@media (max-width: 480px) {
+/* 📱 Mobile (perfect size like your screenshot) */
+@media (max-width: 680px) {
   .square {
-    width: 45vw;
-    height: 45vh;
+    width: 35vw;   /* 🔥 best fit */
+    height: 35vw;  /* equal = square */
     font-size: 8vw;
   }
 }
-
