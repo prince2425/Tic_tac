@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.game-container {
+  min-height: 100vh;
+  background: #0f172a;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 20px;
+  color: white;
+}
+
+.board-container {
+  position: relative;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+}
+
+.board-row {
+  display: flex;
+}
+
+.square {
+  width: 110px;
+  height: 110px;
+
+  margin: 4px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #1e293b;
+  color: white;
+
+  font-size: 3rem;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: 0.3s;
+}
+
+.square:hover {
+  background: #334155;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.reset-btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+
+  background: #22c55e;
+  color: white;
+  font-size: 1rem;
+}
+
+/* WINNING LINE */
+
+.win-line {
+  position: absolute;
+  background: #00e5ff;
+  box-shadow:
+    0 0 10px #00e5ff,
+    0 0 20px #00e5ff,
+    0 0 30px #00e5ff;
+
+  z-index: 100;
+  animation: drawLine 0.5s ease-in-out;
+}
+
+@keyframes drawLine {
+  from {
+    opacity: 0;
+    scale: 0;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+/* Horizontal */
+
+.row-0 {
+  width: 95%;
+  height: 6px;
+  top: 18%;
+  left: 2.5%;
+}
+
+.row-1 {
+  width: 95%;
+  height: 6px;
+  top: 50%;
+  left: 2.5%;
+  transform: translateY(-50%);
+}
+
+.row-2 {
+  width: 95%;
+  height: 6px;
+  bottom: 18%;
+  left: 2.5%;
+}
+
+/* Vertical */
+
+.col-0 {
+  width: 6px;
+  height: 95%;
+  left: 18%;
+  top: 2.5%;
+}
+
+.col-1 {
+  width: 6px;
+  height: 95%;
+  left: 50%;
+  top: 2.5%;
+  transform: translateX(-50%);
+}
+
+.col-2 {
+  width: 6px;
+  height: 95%;
+  right: 18%;
+  top: 2.5%;
+}
+
+/* Diagonal */
+
+.diag-1 {
+  width: 140%;
+  height: 6px;
+  top: 50%;
+  left: -20%;
+  transform: rotate(45deg);
+}
+
+.diag-2 {
+  width: 140%;
+  height: 6px;
+  top: 50%;
+  left: -20%;
+  transform: rotate(-45deg);
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .square {
+    width: 28vw;
+    height: 28vw;
+    font-size: 2rem;
+  }
+}
